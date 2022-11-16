@@ -6,8 +6,8 @@ question_bank = []
 
 for item in range(0, len(question_data)):
     q = question_data[item]
-    text = q['text']
-    answer = q['answer']
+    text = q['question']
+    answer = q['correct_answer']
 
     new_q = Question(q_text=text, q_answer=answer)
     question_bank.append(new_q)
