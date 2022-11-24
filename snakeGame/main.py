@@ -40,15 +40,27 @@ def play_game():
         xcor = snake.head.xcor()
         ycor = snake.head.ycor()
         if xcor < -280 or xcor > 280 or ycor < -280 or ycor > 280:
-            is_game_on = False
-            scores.game_over()
+            # is_game_on = False
+            # scores.game_over()
+            scores.reset()
+            snake.reset()
+            food.refresh()
 
         #detect collision with tail
         for i in snake.snakes_all[1:]:
             if snake.head.distance(i) < 10:
-                is_game_on = False
-                scores.game_over()
+                scores.reset()
+                snake.reset()
+                food.refresh()
+                # is_game_on = False
+                # scores.game_over()
+
 
 play_game()
-
 screen.exitonclick()
+# with open("/Users/chiomaamasiatu/Documents/Tutorial/Python/100_days_of_coding/my_file.txt") as file:
+#     contents = file.read()
+#     print(contents)
+
+
+
